@@ -5,8 +5,7 @@ In this assessment, you will be tested on your knowledge of Promises and
 
 ## Usage
 
-1. Clone the assessment repository from
-   [https://github.com/appacademy/assessment-for-week-08-v2-practice-a-promises].
+1. Clone the assessment repository.
 2. `cd` into the folder and `npm install` to install dependencies
 3. Your objective is to implement the code in **01-promise.js** and
    **02-fetch.js** files.
