@@ -59,22 +59,22 @@ describe('PUT /colors/1', () => {
   });
 
   context('makes a request with fetch', () => {
-    it('calls the fetch function', async () => {
-      if (error) throw error;
-      try {
-        expect(spy).to.have.been.called();
-      } catch (e) {
-        throw new AssertionError(`Expected fetch() to have been called"`);
-      }
-    });
 
-    it('makes a request to /colors/1', async () => {
+    it('calls the fetch function and makes a request to /colors/1', async () => {
       if (error) throw error;
       try {
         expect(spy).to.have.been.called.with('/colors/1');
        } catch (e) {
         throw new AssertionError(`Expected request to be made to "/colors/1"`);
       }
+    });
+
+    it('includes the appropriate headers', async () => {
+      if (error) throw error;
+
+      options.headers.hasOwnProperty("Content-Type") ?
+        expect(options.headers["Content-Type"]).to.eql("application/json") :
+        expect(options.headers["content-type"]).to.eql("application/json");
     });
 
     it('makes a request with a method of PUT', async () => {
