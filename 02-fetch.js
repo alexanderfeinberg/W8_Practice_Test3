@@ -9,3 +9,6 @@ if (!fetch) {
  ******************************************************************************/
 
 // Your code here
+const body= JSON.stringify({"color":"green"})
+const headers = {"Content-Type":"application/json"}
+fetch("/colors/1",{method:"PUT", headers:headers, body:body}).then(resp => resp.json()).then(body=>console.log(body))

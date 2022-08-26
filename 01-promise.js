@@ -2,7 +2,7 @@ const makePromise = require('./test/pot-plant');
 
 const addSoil = makePromise('addSoil');
 const plantSeed = makePromise('plantSeed');
-const growPlant = makePromise('growPlant');
+const growPlant =  makePromise('growPlant');
 
 /**
  * Do not change code above this line.
@@ -11,6 +11,12 @@ const growPlant = makePromise('growPlant');
  ******************************************************************************/
 
 // Your code here
+const potPlant = async(seed) =>{
+  const soil = await addSoil()
+  const plant = await plantSeed(seed)
+  const callGrow = await growPlant(plant)
+  return callGrow
+}
 
 
 /*******************************************************************************
